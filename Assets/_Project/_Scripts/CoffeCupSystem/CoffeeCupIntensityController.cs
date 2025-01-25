@@ -7,7 +7,7 @@ namespace _Project._Scripts.CoffeCupSystem
     public class CoffeeCupIntensityController : MonoBehaviour
     {
         [SerializeField] private VisualEffect coffeeVFX;
-        [SerializeField] private CoffeeCupVFXPropertyConfig propertyConfig; // Reference to the ScriptableObject
+        [SerializeField] private CoffeeCupVFXPropertyConfig propertyConfig;
 
         private float _lastIntensity = -1f; // Cache the last intensity value
         
