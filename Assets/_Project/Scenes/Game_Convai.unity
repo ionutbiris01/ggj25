@@ -861,67 +861,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4d989e28a9b606446aee14665f22e3cb, type: 3}
---- !u!1001 &654305330
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 2124193427804383222, guid: 239820065d17ca64b932448d32d5cefa, type: 3}
-      propertyPath: m_Name
-      value: Detective
-      objectReference: {fileID: 0}
-    - target: {fileID: 2124193427804383222, guid: 239820065d17ca64b932448d32d5cefa, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4228066844521758335, guid: 239820065d17ca64b932448d32d5cefa, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4228066844521758335, guid: 239820065d17ca64b932448d32d5cefa, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.18
-      objectReference: {fileID: 0}
-    - target: {fileID: 4228066844521758335, guid: 239820065d17ca64b932448d32d5cefa, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.76
-      objectReference: {fileID: 0}
-    - target: {fileID: 4228066844521758335, guid: 239820065d17ca64b932448d32d5cefa, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4228066844521758335, guid: 239820065d17ca64b932448d32d5cefa, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4228066844521758335, guid: 239820065d17ca64b932448d32d5cefa, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4228066844521758335, guid: 239820065d17ca64b932448d32d5cefa, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4228066844521758335, guid: 239820065d17ca64b932448d32d5cefa, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4228066844521758335, guid: 239820065d17ca64b932448d32d5cefa, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 180
-      objectReference: {fileID: 0}
-    - target: {fileID: 4228066844521758335, guid: 239820065d17ca64b932448d32d5cefa, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 239820065d17ca64b932448d32d5cefa, type: 3}
 --- !u!1 &688242780 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5134558795438609503, guid: f841ea6e7a8c8a0458a967d350f630af, type: 3}
@@ -3079,9 +3018,17 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0.0018974931
       objectReference: {fileID: 0}
+    - target: {fileID: 1137761751142796456, guid: 2d32db85c0df1af44b590f8cf1db2b44, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2975680314926164516, guid: 2d32db85c0df1af44b590f8cf1db2b44, type: 3}
       propertyPath: m_Name
       value: Convai NPC Justin Case
+      objectReference: {fileID: 0}
+    - target: {fileID: 2975680314926164516, guid: 2d32db85c0df1af44b590f8cf1db2b44, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2975680314926164516, guid: 2d32db85c0df1af44b590f8cf1db2b44, type: 3}
       propertyPath: m_TagString
@@ -3097,7 +3044,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5821698640732643732, guid: 2d32db85c0df1af44b590f8cf1db2b44, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.273
+      value: 1.29
       objectReference: {fileID: 0}
     - target: {fileID: 5821698640732643732, guid: 2d32db85c0df1af44b590f8cf1db2b44, type: 3}
       propertyPath: m_LocalRotation.w
@@ -10975,7 +10922,6 @@ SceneRoots:
   - {fileID: 853918299}
   - {fileID: 1208260349}
   - {fileID: 202640133}
-  - {fileID: 654305330}
   - {fileID: 424120537}
   - {fileID: 1149324264}
   - {fileID: 4271218}
