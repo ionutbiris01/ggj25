@@ -11,8 +11,6 @@ namespace _Project._Scripts.Managers
 
         // Sound Events
         public static event Action<AudioClip> OnPlayMusic, OnPlaySFX, OnPlayDialogue;
-        public static event Action<AudioClip, Vector3> OnPlay3DSFXAtPosition;
-        public static event Action<AudioClip, GameObject> OnPlay3DSFXAttached;
         public static event Action<float> OnSetMusicVolume, OnSetSFXVolume, OnSetDialogueVolume;
         public static event Action<bool> OnToggleMusicMute, OnToggleSFXMute, OnToggleDialogueMute;
 
@@ -26,8 +24,6 @@ namespace _Project._Scripts.Managers
         public static void TriggerPlayMusic(AudioClip clip) => OnPlayMusic?.Invoke(clip);
         public static void TriggerPlaySFX(AudioClip clip) => OnPlaySFX?.Invoke(clip);
         public static void TriggerPlayDialogue(AudioClip clip) => OnPlayDialogue?.Invoke(clip);
-        public static void TriggerPlay3DSFXAtPosition(AudioClip clip, Vector3 position) => OnPlay3DSFXAtPosition?.Invoke(clip, position);
-        public static void TriggerPlay3DSFXAttached(AudioClip clip, GameObject target) => OnPlay3DSFXAttached?.Invoke(clip, target);
 
         public static void TriggerSetMusicVolume(float volume) => OnSetMusicVolume?.Invoke(volume);
         public static void TriggerSetSFXVolume(float volume) => OnSetSFXVolume?.Invoke(volume);

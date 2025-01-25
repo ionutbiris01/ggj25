@@ -120,9 +120,9 @@ public class SoundManager : MonoBehaviour
 
     private void ApplyVolumeSettings()
     {
-        musicSource.volume = musicMuted ? 0f : musicVolume;
-        sfxSource.volume = sfxMuted ? 0f : sfxVolume;
-        dialogueSource.volume = dialogueMuted ? 0f : dialogueVolume;
+        musicSource.mute = musicMuted;
+        sfxSource.mute = sfxMuted;
+        dialogueSource.mute = dialogueMuted;
     }
 
     private void SaveSettings()
