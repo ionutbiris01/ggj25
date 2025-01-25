@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using static Enums;
 
 namespace _Project._Scripts.Managers
 {
@@ -16,6 +17,8 @@ namespace _Project._Scripts.Managers
         public static event Action<float> OnSetMusicVolume, OnSetSFXVolume, OnSetDialogueVolume;
         public static event Action<bool> OnToggleMusicMute, OnToggleSFXMute, OnToggleDialogueMute;
 
+        // Convai
+        public static event Action<ConvaiTriggerType> OnConvaiTriggered;
         
         public static void ChangeCoffeCupIntensity(float intensity) => OnCoffeCupIntensityChanged?.Invoke(intensity);
         public static void ChangeCursorVisibility(bool visible) => OnCursorVisibilityChanged?.Invoke(visible);
@@ -36,5 +39,7 @@ namespace _Project._Scripts.Managers
         public static void TriggerToggleMusicMute(bool mute) => OnToggleMusicMute?.Invoke(mute);
         public static void TriggerToggleSFXMute(bool mute) => OnToggleSFXMute?.Invoke(mute);
         public static void TriggerToggleDialogueMute(bool mute) => OnToggleDialogueMute?.Invoke(mute);
+
+        public static void TriggerConvaiTriggered(ConvaiTriggerType triggerType) => OnConvaiTriggered?.Invoke(triggerType);
     }
 }

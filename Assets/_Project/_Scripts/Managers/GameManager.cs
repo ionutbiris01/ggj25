@@ -1,24 +1,52 @@
+using Convai.Scripts.Runtime.Core;
 using UnityEngine;
 
 namespace _Project._Scripts.Managers
 {
     public class GameManager : MonoBehaviour
     {
-        [Range(0,1)] public float coffeCupIntensity = 0;
-        
+        [Range(0, 1)]
+        [SerializeField]
+        private float _coffeCupIntensity;
+
+        public float CoffeCupIntensity
+        {
+            get => _coffeCupIntensity;
+            set
+            {
+                if (Mathf.Approximately(_coffeCupIntensity, value)) return; 
+                _coffeCupIntensity = value;
+                EventManager.ChangeCoffeCupIntensity(_coffeCupIntensity);
+            }
+        }
+        [ContextMenu("TestIntensityModified")]
+        public void ModifyIntensity()
+        {
+            CoffeCupIntensity = 0.9f;
+        }
         private bool _isOptionsPanelActive;
-        
-        // Start is called once before the first execution of Update after the MonoBehaviour is created
+        private void OnEnable()
+        {
+            ConvaiNPCManager.Instance.OnActiveNPCChanged += npc =>
+            {
+                EventManager.TriggerConvaiTriggered(Enums.ConvaiTriggerType.T_Introduction);
+            };
+        }
+        private void OnDisable()
+        {
+            ConvaiNPCManager.Instance.OnActiveNPCChanged -= npc =>
+            {
+                EventManager.TriggerConvaiTriggered(Enums.ConvaiTriggerType.T_Introduction);
+            };
+        }
         void Start()
         {
             EventManager.ChangeCursorVisibility(false);
             EventManager.ToggleOptionsPanel(false);
         }
 
-        // Update is called once per frame
         void Update()
         {
-            EventManager.ChangeCoffeCupIntensity(coffeCupIntensity);
 
             if (Input.GetKeyDown(KeyCode.Escape))
             {
