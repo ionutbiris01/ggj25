@@ -1,3 +1,5 @@
+using System;
+using _Project._Scripts.Managers;
 using UnityEngine;
 
 namespace _Project._Scripts
@@ -10,10 +12,29 @@ namespace _Project._Scripts
         [SerializeField] private float maxVerticalAngle = 60f;  // Maximum vertical angle (looking up)
 
         private float _verticalRotation = 0f; // Tracks the vertical rotation
+        private bool _isControlEnabled = true; // Tracks if the control is enabled
+        
+        private void OnEnable()
+        {
+            EventManager.OnCursorVisibilityChanged += DisableControl;
+        }
+        
+        private void OnDisable()
+        {
+            EventManager.OnCursorVisibilityChanged -= DisableControl;
+        }
+
+        private void DisableControl(bool value)
+        {
+            _isControlEnabled = !value;
+        }
 
         private void Update()
         {
-            HandleRotation();
+            if (_isControlEnabled)
+            {
+                HandleRotation();
+            }
         }
 
         private void HandleRotation()
