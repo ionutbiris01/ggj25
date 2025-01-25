@@ -8,6 +8,7 @@ namespace _Project._Scripts.Managers
         [Range(0, 1)]
         [SerializeField]
         private float _coffeCupIntensity;
+        private bool _isOptionsPanelActive;
 
         public float CoffeCupIntensity
         {
@@ -19,12 +20,14 @@ namespace _Project._Scripts.Managers
                 EventManager.ChangeCoffeCupIntensity(_coffeCupIntensity);
             }
         }
+        
         [ContextMenu("TestIntensityModified")]
         public void ModifyIntensity()
         {
             CoffeCupIntensity = 0.9f;
         }
-        private bool _isOptionsPanelActive;
+        
+        
         private void OnEnable()
         {
             ConvaiNPCManager.Instance.OnActiveNPCChanged += npc =>

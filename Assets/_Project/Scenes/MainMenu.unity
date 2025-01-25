@@ -607,17 +607,9 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 3580483076202733224, guid: 32b0f86753a1fcd4c8b582962e6f80e8, type: 3}
-      propertyPath: m_Resource
-      value: 
-      objectReference: {fileID: 8300000, guid: 53499db472a01f14ba8f87ca18b957bb, type: 3}
-    - target: {fileID: 3580483076202733224, guid: 32b0f86753a1fcd4c8b582962e6f80e8, type: 3}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: 53499db472a01f14ba8f87ca18b957bb, type: 3}
-    - target: {fileID: 3580483076202733224, guid: 32b0f86753a1fcd4c8b582962e6f80e8, type: 3}
-      propertyPath: m_PlayOnAwake
-      value: 1
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 8300000, guid: 6c553577fabdba844b1b9dc7caa7f599, type: 3}
     - target: {fileID: 4199654035538466006, guid: 32b0f86753a1fcd4c8b582962e6f80e8, type: 3}
       propertyPath: m_Name
       value: SoundManager
@@ -754,6 +746,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6103254953773264086, guid: f841ea6e7a8c8a0458a967d350f630af, type: 3}
+      propertyPath: m_Resource
+      value: 
+      objectReference: {fileID: 8300000, guid: 29ac7ae69f8e2c04384dcb0574dc4c4f, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
