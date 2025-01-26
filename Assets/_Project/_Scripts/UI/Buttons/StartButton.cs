@@ -1,13 +1,17 @@
+using _Project._Scripts.UI.Utility;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 namespace _Project._Scripts.UI.Buttons
 {
-    public class StartButton : MonoBehaviour, IPointerClickHandler
+    public class StartButton : ButtonClickEffect
     {
-        public void OnPointerClick(PointerEventData eventData)
+        public override void OnPointerClick(PointerEventData eventData)
         {
+            base.OnPointerClick(eventData);
+            
             SceneManager.LoadScene("Game");
         }
     }

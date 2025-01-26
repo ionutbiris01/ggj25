@@ -1,4 +1,5 @@
 using _Project._Scripts.Managers;
+using _Project._Scripts.UI.Utility;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -6,7 +7,7 @@ using UnityEngine.SceneManagement;
 
 namespace _Project._Scripts.UI.Buttons
 {
-    public class BackButton : MonoBehaviour, IPointerClickHandler
+    public class BackButton : ButtonClickEffect
     {
         [SerializeField] private bool isMainMenuItem;
         
@@ -19,8 +20,10 @@ namespace _Project._Scripts.UI.Buttons
             _text.text = isMainMenuItem ? "Back" : "Exit";
         }
         
-        public void OnPointerClick(PointerEventData eventData)
+        public override void OnPointerClick(PointerEventData eventData)
         {
+            base.OnPointerClick(eventData);
+            
             EventManager.ToggleOptionsPanel(false);
 
             if (isMainMenuItem)

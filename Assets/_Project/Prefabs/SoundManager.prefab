@@ -179,6 +179,8 @@ MonoBehaviour:
   musicSource: {fileID: 3580483076202733224}
   sfxSource: {fileID: 392128624063669633}
   dialogueSource: {fileID: 5630574931199005157}
+  buttonHoverSFX: {fileID: 8300000, guid: 41d0fddd5a2c8e841ab5b028d1a41d87, type: 3}
+  buttonClickSFX: {fileID: 8300000, guid: a30e33c2a65136944b4ebf4a92a00582, type: 3}
 --- !u!1 &6640118613688007595
 GameObject:
   m_ObjectHideFlags: 0

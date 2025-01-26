@@ -12,6 +12,10 @@ public class SoundManager : MonoBehaviour
     private float musicVolume = 1f;
     private float sfxVolume = 1f;
     private float dialogueVolume = 1f;
+    
+    [Header("Audio Clips")]
+    [SerializeField] private AudioClip buttonHoverSFX;
+    [SerializeField] private AudioClip buttonClickSFX;
 
     private bool musicMuted = false;
     private bool sfxMuted = false;
@@ -20,6 +24,8 @@ public class SoundManager : MonoBehaviour
     private void OnEnable()
     {
         // Subscribe to events
+        EventManager.OnPlayButtonHoverSFX += PlayButtonHoverSFX;
+        EventManager.OnPlayButtonClickSFX += PlayButtonClickSFX;
         EventManager.OnPlayMusic += PlayMusic;
         EventManager.OnPlaySFX += PlaySFX;
         EventManager.OnPlayDialogue += PlayDialogue;
@@ -66,6 +72,16 @@ public class SoundManager : MonoBehaviour
     {
         if (clip == null) return;
         sfxSource.PlayOneShot(clip, sfxVolume);
+    }
+    
+    private void PlayButtonHoverSFX()
+    {
+        PlaySFX(buttonHoverSFX);
+    }
+    
+    private void PlayButtonClickSFX()
+    {
+        PlaySFX(buttonClickSFX);
     }
 
     private void PlayDialogue(AudioClip clip)

@@ -8,9 +8,10 @@ namespace _Project._Scripts.Managers
     {
         
         public static event Action<float> OnCoffeCupIntensityChanged;
-        public static event Action<bool> OnCursorVisibilityChanged, OnOptionsPanelToggle, OnMainMenuPanelToggle;
+        public static event Action<bool> OnCursorVisibilityChanged, OnOptionsPanelToggle, OnMainMenuPanelToggle, OnResultsPanelToggle;
 
         // Sound Events
+        public static event Action OnPlayButtonHoverSFX, OnPlayButtonClickSFX;
         public static event Action<AudioClip> OnPlayMusic, OnPlaySFX, OnPlayDialogue;
         public static event Action<float> OnSetMusicVolume, OnSetSFXVolume, OnSetDialogueVolume;
         public static event Action<bool> OnToggleMusicMute, OnToggleSFXMute, OnToggleDialogueMute;
@@ -22,8 +23,10 @@ namespace _Project._Scripts.Managers
         public static void ChangeCursorVisibility(bool visible) => OnCursorVisibilityChanged?.Invoke(visible);
         public static void ToggleOptionsPanel(bool value) => OnOptionsPanelToggle?.Invoke(value);
         public static void ToggleMainMenuPanel(bool value) => OnMainMenuPanelToggle?.Invoke(value);
+        public static void ToggleResultsPanel(bool value) => OnResultsPanelToggle?.Invoke(value);
 
-        
+        public static void TriggerPlayButtonHoverSFX() => OnPlayButtonHoverSFX?.Invoke();
+        public static void TriggerPlayButtonClickSFX() => OnPlayButtonClickSFX?.Invoke();
         public static void TriggerPlayMusic(AudioClip clip) => OnPlayMusic?.Invoke(clip);
         public static void TriggerPlaySFX(AudioClip clip) => OnPlaySFX?.Invoke(clip);
         public static void TriggerPlayDialogue(AudioClip clip) => OnPlayDialogue?.Invoke(clip);

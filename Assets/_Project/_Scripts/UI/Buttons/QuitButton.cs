@@ -1,12 +1,15 @@
+using _Project._Scripts.UI.Utility;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
 namespace _Project._Scripts.UI.Buttons
 {
-    public class QuitButton : MonoBehaviour, IPointerClickHandler
+    public class QuitButton : ButtonClickEffect
     {
-        public void OnPointerClick(PointerEventData eventData)
+        public override void OnPointerClick(PointerEventData eventData)
         {
+            base.OnPointerClick(eventData);
+            
             Application.Quit();
         }
     }

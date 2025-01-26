@@ -1,3 +1,4 @@
+using _Project._Scripts.Managers;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -18,6 +19,7 @@ namespace _Project._Scripts.UI.Utility
         public void OnPointerEnter(PointerEventData eventData)
         {
             transform.localScale = _originalScale * scale; 
+            EventManager.TriggerPlayButtonHoverSFX();
         }
 
         public void OnPointerExit(PointerEventData eventData)

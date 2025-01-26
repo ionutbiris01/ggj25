@@ -46,6 +46,7 @@ namespace _Project._Scripts.Managers
         {
             EventManager.ChangeCursorVisibility(false);
             EventManager.ToggleOptionsPanel(false);
+            EventManager.ToggleResultsPanel(false);
         }
 
         void Update()
