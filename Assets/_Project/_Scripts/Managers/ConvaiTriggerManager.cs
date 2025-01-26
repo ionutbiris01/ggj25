@@ -19,14 +19,17 @@ public class ConvaiTriggerManager : MonoBehaviour
 
     public void SetPlayerAsDeceptive()
     {
+        Debug.LogError("Player is deceptive");
         playerIsDeceptive = true;
     }
     public void SetPlayerAsTruthful()
     {
+        Debug.LogError("Player is truthful");
         playerIsDeceptive = false;
     }
     public void TriggerResultPanelEvent()
     {
+        Debug.LogError("End");
         EventManager.ToggleResultsPanel(true, playerIsDeceptive);
     }
     private void OnEnable()
