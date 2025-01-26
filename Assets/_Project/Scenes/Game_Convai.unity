@@ -1488,6 +1488,7 @@ MonoBehaviour:
   T_07_10: {fileID: 963702005}
   T_Deceptive: {fileID: 2060250944}
   T_Thrutful: {fileID: 2056143168}
+  playerIsDeceptive: 0
 --- !u!1 &963702003
 GameObject:
   m_ObjectHideFlags: 0
@@ -1775,6 +1776,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1747322898}
   - {fileID: 867030163}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1989,6 +1991,152 @@ MonoBehaviour:
   onTriggerEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1001 &1747322897
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1208260349}
+    m_Modifications:
+    - target: {fileID: 355808016766334529, guid: 6b2b079830e3dfb4da87b8ef08226680, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 355808016766334529, guid: 6b2b079830e3dfb4da87b8ef08226680, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 355808016766334529, guid: 6b2b079830e3dfb4da87b8ef08226680, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 225
+      objectReference: {fileID: 0}
+    - target: {fileID: 355808016766334529, guid: 6b2b079830e3dfb4da87b8ef08226680, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 355808016766334529, guid: 6b2b079830e3dfb4da87b8ef08226680, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3935623850604054932, guid: 6b2b079830e3dfb4da87b8ef08226680, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3935623850604054932, guid: 6b2b079830e3dfb4da87b8ef08226680, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3935623850604054932, guid: 6b2b079830e3dfb4da87b8ef08226680, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -125
+      objectReference: {fileID: 0}
+    - target: {fileID: 3935623850604054932, guid: 6b2b079830e3dfb4da87b8ef08226680, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3935623850604054932, guid: 6b2b079830e3dfb4da87b8ef08226680, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5725440311983763886, guid: 6b2b079830e3dfb4da87b8ef08226680, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5725440311983763886, guid: 6b2b079830e3dfb4da87b8ef08226680, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5725440311983763886, guid: 6b2b079830e3dfb4da87b8ef08226680, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5725440311983763886, guid: 6b2b079830e3dfb4da87b8ef08226680, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5725440311983763886, guid: 6b2b079830e3dfb4da87b8ef08226680, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5725440311983763886, guid: 6b2b079830e3dfb4da87b8ef08226680, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5725440311983763886, guid: 6b2b079830e3dfb4da87b8ef08226680, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 5725440311983763886, guid: 6b2b079830e3dfb4da87b8ef08226680, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 5725440311983763886, guid: 6b2b079830e3dfb4da87b8ef08226680, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5725440311983763886, guid: 6b2b079830e3dfb4da87b8ef08226680, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5725440311983763886, guid: 6b2b079830e3dfb4da87b8ef08226680, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5725440311983763886, guid: 6b2b079830e3dfb4da87b8ef08226680, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5725440311983763886, guid: 6b2b079830e3dfb4da87b8ef08226680, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5725440311983763886, guid: 6b2b079830e3dfb4da87b8ef08226680, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5725440311983763886, guid: 6b2b079830e3dfb4da87b8ef08226680, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5725440311983763886, guid: 6b2b079830e3dfb4da87b8ef08226680, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5725440311983763886, guid: 6b2b079830e3dfb4da87b8ef08226680, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5725440311983763886, guid: 6b2b079830e3dfb4da87b8ef08226680, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5725440311983763886, guid: 6b2b079830e3dfb4da87b8ef08226680, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5725440311983763886, guid: 6b2b079830e3dfb4da87b8ef08226680, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6315136659889867095, guid: 6b2b079830e3dfb4da87b8ef08226680, type: 3}
+      propertyPath: m_Name
+      value: ResultPanel
+      objectReference: {fileID: 0}
+    - target: {fileID: 6315136659889867095, guid: 6b2b079830e3dfb4da87b8ef08226680, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6b2b079830e3dfb4da87b8ef08226680, type: 3}
+--- !u!224 &1747322898 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 5725440311983763886, guid: 6b2b079830e3dfb4da87b8ef08226680, type: 3}
+  m_PrefabInstance: {fileID: 1747322897}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1761083180 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7803794476678663908, guid: f841ea6e7a8c8a0458a967d350f630af, type: 3}
@@ -9782,14 +9930,38 @@ MonoBehaviour:
   - id: bc10da66-db20-11ef-a90a-42010a7be016
     onSectionStart:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 926578298}
+          m_TargetAssemblyTypeName: ConvaiTriggerManager, Assembly-CSharp
+          m_MethodName: SetPlayerAsTruthful
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
     onSectionEnd:
       m_PersistentCalls:
         m_Calls: []
   - id: 204ab994-db20-11ef-87f4-42010a7be016
     onSectionStart:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 926578298}
+          m_TargetAssemblyTypeName: ConvaiTriggerManager, Assembly-CSharp
+          m_MethodName: SetPlayerAsDeceptive
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
     onSectionEnd:
       m_PersistentCalls:
         m_Calls: []
@@ -9811,6 +9983,32 @@ MonoBehaviour:
     onSectionStart:
       m_PersistentCalls:
         m_Calls: []
+    onSectionEnd:
+      m_PersistentCalls:
+        m_Calls: []
+  - id: 44cdab6e-dbe8-11ef-8c2c-42010a7be016
+    onSectionStart:
+      m_PersistentCalls:
+        m_Calls: []
+    onSectionEnd:
+      m_PersistentCalls:
+        m_Calls: []
+  - id: cd0f585a-dbe9-11ef-87f4-42010a7be016
+    onSectionStart:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 926578298}
+          m_TargetAssemblyTypeName: ConvaiTriggerManager, Assembly-CSharp
+          m_MethodName: TriggerResultPanelEvent
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
     onSectionEnd:
       m_PersistentCalls:
         m_Calls: []
@@ -9854,17 +10052,19 @@ MonoBehaviour:
   - sectionId: b39b2086-db1f-11ef-87f4-42010a7be016
     sectionName: Introduction
     behaviorTreeConstants: 
-    objective: "Establish the context and stakes for the interrogation, providing
-      the player with enough information to form their defense or story.\n\nTone
-      and Actions:\nCalm, professional, and slightly intimidating.\nClearly explains
-      the case details and why the interrogation is happening.\nInvites the player
-      to explain their perspective, setting the stage for the dynamic that follows.\nExample
-      Dialogue:\n\"Let\u2019s get started. A crime was committed last night\u2014a
-      theft at the downtown gallery. All evidence so far points in your direction.
-      But I\u2019m here to give you a chance to explain yourself. Start wherever
-      you\u2019d like, but remember: I don\u2019t miss much.\"\n\"Your version of
-      events could change everything for you. Or, it could seal your fate. It\u2019s
-      your call.\"\n"
+    objective: "Set the stage by outlining the circumstances of the interrogation
+      and emphasizing its importance. Provide enough detail for the player to craft
+      their narrative or defense.\n\nTone and Actions:\n\nMaintain a calm, authoritative
+      demeanor with an undercurrent of intimidation.\nClearly articulate the case
+      details and rationale for the interrogation.\nExtend an opportunity for the
+      player to present their perspective, establishing a tense dynamic.\nExample
+      Introduction:\n\u201CLet\u2019s begin. A high-profile theft took place last
+      night at the downtown gallery. All the evidence we\u2019ve gathered so far
+      leads back to you. But here\u2019s your chance to explain yourself. Tell me
+      what happened, in your own words\u2014but understand this: I catch every detail,
+      so choose carefully.\u201D\n\u201CWhat you say next could shift the entire
+      outcome for you. Will you clarify your role, or will your words dig you deeper?
+      The choice is yours.\u201D\n\nStart from a neutral position.\n"
     characterId: 9f8c1f9c-da88-11ef-ac12-42010a7be016
   - sectionId: f7994c4a-db1f-11ef-9793-42010a7be016
     sectionName: 0.0 - 0.3
@@ -9887,6 +10087,26 @@ MonoBehaviour:
       guard.\nExample Dialogue:\n\"I appreciate your openness so far, but I need
       to confirm a few more details.\"\n\"You\u2019re making sense, but let\u2019s
       make sure everything checks out. Why don\u2019t we revisit the start?\"\n"
+    characterId: 9f8c1f9c-da88-11ef-ac12-42010a7be016
+  - sectionId: 44cdab6e-dbe8-11ef-8c2c-42010a7be016
+    sectionName: section 7
+    behaviorTreeConstants: 
+    objective: "Escalate to a more assertive, pressing tone. Increase the pressure
+      as the interrogation progresses.\n\nTone and Actions:\n\nShift to sharp, clipped
+      dialogue with pointed accusations.\nHighlight contradictions and inconsistencies
+      to corner the suspect.\nUse psychological pressure, such as presenting fabricated
+      evidence or challenging their credibility.\nExample Confrontation:\n\u201CYou\u2019re
+      wasting my time. Stop dancing around the truth and tell me what you were doing
+      at the gallery that night.\u201D\n\u201CYour version of events doesn\u2019t
+      line up with the facts we have. Either you start making sense, or this conversation
+      takes a turn you won\u2019t like.\u201D\n\u201CI\u2019ve seen your type before\u2014you
+      think you can outsmart me. But every lie you tell stacks the odds against you.
+      So, let\u2019s hear it: the truth, or more excuses?\u201D"
+    characterId: 9f8c1f9c-da88-11ef-ac12-42010a7be016
+  - sectionId: cd0f585a-dbe9-11ef-87f4-42010a7be016
+    sectionName: End
+    behaviorTreeConstants: 
+    objective: Stop interacting with the player. Game is finished.
     characterId: 9f8c1f9c-da88-11ef-ac12-42010a7be016
   triggerDataList:
   - triggerId: cbf9f9d6-db1f-11ef-b9d5-42010a7be016

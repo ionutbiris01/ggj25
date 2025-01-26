@@ -14,15 +14,30 @@ public class ConvaiTriggerManager : MonoBehaviour
     [SerializeField] private NarrativeDesignTrigger T_Thrutful;
 
     private ConvaiTriggerType lastTriggerInvoked = ConvaiTriggerType.None;
+
+    public bool playerIsDeceptive;
+
+    public void SetPlayerAsDeceptive()
+    {
+        playerIsDeceptive = true;
+    }
+    public void SetPlayerAsTruthful()
+    {
+        playerIsDeceptive = false;
+    }
+    public void TriggerResultPanelEvent()
+    {
+        EventManager.ToggleResultsPanel(true, playerIsDeceptive);
+    }
     private void OnEnable()
     {
         EventManager.OnConvaiTriggered += InvokeConvaiTrigger;
-        EventManager.OnCoffeCupIntensityChanged += CheckSectionChanged;
+        //EventManager.OnCoffeCupIntensityChanged += CheckSectionChanged;
     }
     private void OnDisable()
     {
         EventManager.OnConvaiTriggered -= InvokeConvaiTrigger;
-        EventManager.OnCoffeCupIntensityChanged -= CheckSectionChanged;
+        //EventManager.OnCoffeCupIntensityChanged -= CheckSectionChanged;
     }
     public void CheckSectionChanged(float _intensity)
     {

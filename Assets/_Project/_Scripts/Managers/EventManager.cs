@@ -8,7 +8,8 @@ namespace _Project._Scripts.Managers
     {
         
         public static event Action<float> OnCoffeCupIntensityChanged;
-        public static event Action<bool> OnCursorVisibilityChanged, OnOptionsPanelToggle, OnMainMenuPanelToggle, OnResultsPanelToggle;
+        public static event Action<bool> OnCursorVisibilityChanged, OnOptionsPanelToggle, OnMainMenuPanelToggle;
+        public static event Action<bool, bool> OnResultsPanelToggle;
 
         // Sound Events
         public static event Action OnPlayButtonHoverSFX, OnPlayButtonClickSFX;
@@ -23,7 +24,7 @@ namespace _Project._Scripts.Managers
         public static void ChangeCursorVisibility(bool visible) => OnCursorVisibilityChanged?.Invoke(visible);
         public static void ToggleOptionsPanel(bool value) => OnOptionsPanelToggle?.Invoke(value);
         public static void ToggleMainMenuPanel(bool value) => OnMainMenuPanelToggle?.Invoke(value);
-        public static void ToggleResultsPanel(bool value) => OnResultsPanelToggle?.Invoke(value);
+        public static void ToggleResultsPanel(bool value, bool value2) => OnResultsPanelToggle?.Invoke(value, value2);
 
         public static void TriggerPlayButtonHoverSFX() => OnPlayButtonHoverSFX?.Invoke();
         public static void TriggerPlayButtonClickSFX() => OnPlayButtonClickSFX?.Invoke();
