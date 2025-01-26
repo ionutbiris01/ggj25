@@ -1,3 +1,4 @@
+using _Project._Scripts;
 using _Project._Scripts.Managers;
 using UnityEngine;
 
@@ -21,6 +22,8 @@ public class SoundManager : MonoBehaviour
     private bool sfxMuted = false;
     private bool dialogueMuted = false;
 
+    private static SoundManager _instance;
+    
     private void OnEnable()
     {
         // Subscribe to events
@@ -57,8 +60,29 @@ public class SoundManager : MonoBehaviour
 
     private void Awake()
     {
+        // Check if an instance already exists
+        if (_instance != null && _instance != this)
+        {
+            Destroy(gameObject); // Destroy the duplicate instance
+            return;
+        }
+
+        // Set this as the singleton instance
+        _instance = this;
+        
+        DontDestroyOnLoad(gameObject); // Make this GameObject persist across scenes
+        
+        UpdateDialogueSource();
         LoadSettings();
         ApplyVolumeSettings();
+    }
+    
+    private void UpdateDialogueSource()
+    {
+        if (dialogueSource == null && NpCReference.Instance != null)
+        {
+            dialogueSource = NpCReference.Instance.GetComponent<AudioSource>();
+        }
     }
 
     private void PlayMusic(AudioClip clip)
@@ -136,13 +160,23 @@ public class SoundManager : MonoBehaviour
 
     private void ApplyVolumeSettings()
     {
+        UpdateDialogueSource();
+        
         musicSource.volume = musicVolume;
         sfxSource.volume = sfxVolume;
-        dialogueSource.volume = dialogueVolume;
+        
+        if (dialogueSource != null)
+        {
+            dialogueSource.volume = dialogueVolume;
+        }
         
         musicSource.mute = musicMuted;
         sfxSource.mute = sfxMuted;
-        dialogueSource.mute = dialogueMuted;
+        
+        if (dialogueSource != null)
+        {
+            dialogueSource.mute = dialogueMuted;
+        }
     }
 
     private void SaveSettings()

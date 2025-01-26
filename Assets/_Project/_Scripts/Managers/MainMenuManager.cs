@@ -8,6 +8,7 @@ namespace _Project._Scripts.Managers
         {
             EventManager.ToggleOptionsPanel(false);
             EventManager.ToggleMainMenuPanel(true);
+            EventManager.ChangeCoffeCupIntensity(0.01f);
         }
     }
 }

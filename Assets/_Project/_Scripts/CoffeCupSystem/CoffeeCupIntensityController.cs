@@ -1,3 +1,4 @@
+using System.Collections;
 using _Project._Scripts.Managers;
 using UnityEngine;
 using UnityEngine.VFX;
@@ -8,8 +9,10 @@ namespace _Project._Scripts.CoffeCupSystem
     {
         [SerializeField] private VisualEffect coffeeVFX;
         [SerializeField] private CoffeeCupVFXPropertyConfig propertyConfig;
+        [SerializeField] private float lerpSpeed = 0.2f; // Speed of the transition
 
-        private float _lastIntensity = -1f; // Cache the last intensity value
+        private float _currentIntensity = 0f; // Current intensity value
+        private Coroutine _lerpCoroutine; // Reference to the active coroutine
         
         private void OnEnable()
         {
@@ -21,15 +24,34 @@ namespace _Project._Scripts.CoffeCupSystem
             EventManager.OnCoffeCupIntensityChanged -= SetIntensity;
         }
 
-        private void SetIntensity(float newIntensity)
+        private void SetIntensity(float targetIntensity)
         {
             // Clamp intensity between 0 and 1
-            var intensity = Mathf.Clamp01(newIntensity);
+            targetIntensity = Mathf.Clamp01(targetIntensity);
 
-            // Only update if intensity has changed
-            if (Mathf.Approximately(intensity, _lastIntensity)) return;
-            UpdateVFXProperties(intensity);
-            _lastIntensity = intensity; // Update the cached intensity
+            // If a coroutine is already running, stop it
+            if (_lerpCoroutine != null)
+            {
+                StopCoroutine(_lerpCoroutine);
+            }
+
+            // Start a new coroutine to smoothly lerp to the target intensity
+            _lerpCoroutine = StartCoroutine(LerpToIntensity(targetIntensity));
+        }
+
+        private IEnumerator LerpToIntensity(float targetIntensity)
+        {
+            // Smoothly transition to the target intensity
+            while (!Mathf.Approximately(_currentIntensity, targetIntensity))
+            {
+                _currentIntensity = Mathf.Lerp(_currentIntensity, targetIntensity, lerpSpeed * Time.deltaTime);
+                UpdateVFXProperties(_currentIntensity);
+                yield return null; // Wait until the next frame
+            }
+
+            // Ensure the final value matches exactly
+            _currentIntensity = targetIntensity;
+            UpdateVFXProperties(_currentIntensity);
         }
 
         private void UpdateVFXProperties(float intensity)

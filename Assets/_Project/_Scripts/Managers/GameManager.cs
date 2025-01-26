@@ -9,6 +9,8 @@ namespace _Project._Scripts.Managers
         [SerializeField]
         private float _coffeCupIntensity;
         private bool _isOptionsPanelActive;
+        private bool _isResultPanelActive;
+        private bool _finalResult;
 
         public float CoffeCupIntensity
         {
@@ -21,10 +23,18 @@ namespace _Project._Scripts.Managers
             }
         }
         
-        [ContextMenu("TestIntensityModified")]
+        [ContextMenu("TestIntensityModified  0.8")]
         public void ModifyIntensity()
         {
-            CoffeCupIntensity = 0.9f;
+            // CoffeCupIntensity = 0.9f;
+            EventManager.ChangeCoffeCupIntensity(0.8f);
+        }
+        
+        [ContextMenu("TestIntensityModified  0")]
+        public void ModifyIntensityTo0()
+        {
+            // CoffeCupIntensity = 0.9f;
+            EventManager.ChangeCoffeCupIntensity(0.01f);
         }
         
         
@@ -34,6 +44,8 @@ namespace _Project._Scripts.Managers
             {
                 EventManager.TriggerConvaiTriggered(Enums.ConvaiTriggerType.T_Introduction);
             };
+
+            EventManager.OnResultsPanelToggle += GetEndGameStatus;
         }
         private void OnDisable()
         {
@@ -41,23 +53,33 @@ namespace _Project._Scripts.Managers
             {
                 EventManager.TriggerConvaiTriggered(Enums.ConvaiTriggerType.T_Introduction);
             };
+            
+            EventManager.OnResultsPanelToggle -= GetEndGameStatus;
         }
+        
         void Start()
         {
             EventManager.ChangeCursorVisibility(false);
             EventManager.ToggleOptionsPanel(false);
             EventManager.ToggleResultsPanel(false, false);
+            EventManager.ChangeCoffeCupIntensity(0.01f);
         }
 
         void Update()
         {
-
             if (Input.GetKeyDown(KeyCode.Escape))
             {
                 _isOptionsPanelActive = !_isOptionsPanelActive;
                 EventManager.ChangeCursorVisibility(_isOptionsPanelActive);
                 EventManager.ToggleOptionsPanel(_isOptionsPanelActive);
+                EventManager.ToggleResultsPanel(false, _finalResult);
             }
+        }
+
+        private void GetEndGameStatus(bool state, bool result)
+        {
+            _isResultPanelActive = state;
+            _finalResult = result;
         }
     }
 }

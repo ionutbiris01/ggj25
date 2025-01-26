@@ -422,6 +422,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coffeeVFX: {fileID: 2525298940574853236}
   propertyConfig: {fileID: 11400000, guid: d8a82226404e79e4d9e2d57d525c2944, type: 2}
+  lerpSpeed: 0.05
 --- !u!114 &1994470953847789723
 MonoBehaviour:
   m_ObjectHideFlags: 0
